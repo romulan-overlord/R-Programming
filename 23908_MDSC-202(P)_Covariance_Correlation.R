@@ -9,7 +9,7 @@ X_bar = colMeans(M)
 sub = matrix(c(X_bar), nrow=nrow, ncol=ncol, byrow=TRUE)
 deviations = M - sub
 
-sigma = t(deviations) %*% deviations
+sigma = (t(deviations) %*% deviations)/nrow
 print(sigma)
 
 sqrt_matrix = diag(1/sqrt(diag(sigma)))
